@@ -55,7 +55,7 @@ function onAppointmentSaveComplete(response, status) {
 	$("#hidAppointmentIDSave").val("");
 	$("#formAppointment")[0].reset();
 }
-
+//Remove
 $(document).on("click", ".btnRemove", function(event) {
 	$.ajax({
 		url : "AppointmentAPI",
