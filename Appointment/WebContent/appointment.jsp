@@ -43,7 +43,7 @@
 				<div id="alertSuccess" class="alert alert-success"></div>
 				<div id="alertError" class="alert alert-danger"></div>
 				<br>
-				<div id="divItemsGrid">
+				<div id="divAppointmentGrid">
 					<%
 						Appointment appointmentObj = new Appointment();
 								out.print(appointmentObj.readAppointment());
