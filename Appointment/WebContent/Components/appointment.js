@@ -2,6 +2,8 @@ $(document).ready(function() {
 	$("#alertSuccess").hide(); 
 	$("#alertError").hide();
 });
+
+
 // SAVE ============================================
 $(document).on("click", "#btnSave", function(event) {
 	// Clear alerts---------------------
@@ -36,6 +38,8 @@ $(document).on("click", "#btnSave", function(event) {
 	});
 	
 });
+
+
 
 
 
@@ -112,10 +116,12 @@ $(document).on(
 			$("#appointmentTime").val($(this).closest("tr").find('td:eq(1)').text());
 			$("#appointmentDoctor").val($(this).closest("tr").find('td:eq(2)').text());
 			$("#appointmentHospital").val($(this).closest("tr").find('td:eq(3)').text());
+			
 		}
 		
 			
 );
+
 
 
 // CLIENTMODEL=========================================================================
