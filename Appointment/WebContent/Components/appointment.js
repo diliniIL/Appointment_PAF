@@ -45,7 +45,7 @@ function onAppointmentSaveComplete(response, status) {
 		if (resultSet.status.trim() == "success") {
 			$("#alertSuccess").text("Successfully saved.");
 			$("#alertSuccess").show();
-			$("#divUsersGrid").html(resultSet.data);
+			$("#divAppointmentsGrid").html(resultSet.data);
 		} else if (resultSet.status.trim() == "error") {
 			$("#alertError").text(resultSet.data);
 			$("#alertError").show();
@@ -61,33 +61,6 @@ function onAppointmentSaveComplete(response, status) {
 	$("#formAppointment")[0].reset();
 }
 
-
-
-
-
-//UPDATE==========================================
-function onAppointmentSaveComplete(response, status) {
-	if (status == "success") {
-		var resultSet = JSON.parse(response);
-		if (resultSet.status.trim() == "success") {
-			$("#alertSuccess").text("Successfully saved.");
-			$("#alertSuccess").show();
-			$("#divAppointmentGrid").html(resultSet.data);
-		} else if (resultSet.status.trim() == "error") {
-			$("#alertError").text(resultSet.data);
-			$("#alertError").show();
-		}
-	} else if (status == "error") {
-		$("#alertError").text("Error while saving.");
-		$("#alertError").show();
-	} else {
-		$("#alertError").text("Unknown error while saving..");
-		$("#alertError").show();
-	}
-	
-	$("#hidAppointmentIDSave").val("");
-	$("#formAppointment")[0].reset();
-}
 //Remove
 $(document).on("click", ".btnRemove", function(event) {
 	$.ajax({
@@ -110,7 +83,7 @@ function onAppointmentDeleteComplete(response, status) {
 		if (resultSet.status.trim() == "success") {
 			$("#alertSuccess").text("Successfully deleted.");
 			$("#alertSuccess").show();
-			$("#divAppointmentGrid").html(resultSet.data);
+			$("#divAppointmentsGrid").html(resultSet.data);
 		} else if (resultSet.status.trim() == "error") {
 			$("#alertError").text(resultSet.data);
 			$("#alertError").show();

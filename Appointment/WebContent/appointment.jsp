@@ -1,11 +1,7 @@
-
+<%@ page import="com.Appointment"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
- <%@ page import="javax.servlet.*"%>
-<%@ page import="javax.servlet.http.*"%>
-<%@ page import="java.sql.*"%>
-<%@ page import="java.util.*"%>
-<%@ page import="com.Appointment"%> 
+
 
 <!DOCTYPE htmlt>
 <html>
@@ -43,11 +39,14 @@
 				<div id="alertSuccess" class="alert alert-success"></div>
 				<div id="alertError" class="alert alert-danger"></div>
 				<br>
-				<div id="divAppointmentGrid">
+				<div id="divAppointmentsGrid">
 					<%
 						Appointment appointmentObj = new Appointment();
 								out.print(appointmentObj.readAppointment());
 					%>
+				</div>
+				</div>
+				</div>
 				</div>
 </body>
 </html>
