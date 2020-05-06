@@ -39,7 +39,27 @@ $(document).on("click", "#btnSave", function(event) {
 	
 });
 
-
+function onAppointmentSaveComplete(response, status) {
+	if (status == "success") {
+		var resultSet = JSON.parse(response);
+		if (resultSet.status.trim() == "success") {
+			$("#alertSuccess").text("Successfully saved.");
+			$("#alertSuccess").show();
+			$("#divUsersGrid").html(resultSet.data);
+		} else if (resultSet.status.trim() == "error") {
+			$("#alertError").text(resultSet.data);
+			$("#alertError").show();
+		}
+	} else if (status == "error") {
+		$("#alertError").text("Error while saving.");
+		$("#alertError").show();
+	} else {
+		$("#alertError").text("Unknown error while saving..");
+		$("#alertError").show();
+	}
+	$("#hidAppointmentIDSave").val("");
+	$("#formAppointment")[0].reset();
+}
 
 
 
@@ -79,8 +99,8 @@ $(document).on("click", ".btnRemove", function(event) {
 			onAppointmentDeleteComplete(response.responseText, status);
 		}
 	});
-	$("#alertSuccess").text("Successfully deleted.");
-	$("#alertSuccess").show();
+	/*$("#alertSuccess").text("Successfully deleted.");
+	$("#alertSuccess").show();*/
 });
 
 //DELETE==========================================
