@@ -1,7 +1,5 @@
 $(document).ready(function() {
-	if ($("#alertSuccess").text().trim() == "") {
-		$("#alertSuccess").hide();
-	}
+	$("#alertSuccess").hide(); 
 	$("#alertError").hide();
 });
 // SAVE ============================================
@@ -22,6 +20,9 @@ $(document).on("click", "#btnSave", function(event) {
 	// If valid------------------------
 	var type = ($("#hidAppointmentIDSave").val() == "") ? "POST" : "PUT";
 
+	$("#alertSuccess").text("Successfully saved.");
+	$("#alertSuccess").show();	
+	
 	$.ajax({
 		url : "AppointmentAPI",
 		type : type,
@@ -29,9 +30,16 @@ $(document).on("click", "#btnSave", function(event) {
 		dataType : "text",
 		complete : function(response, status) {
 			onAppointmentSaveComplete(response.responseText, status);
+			
 		}
+	
 	});
+	
 });
+
+
+
+
 
 //UPDATE==========================================
 function onAppointmentSaveComplete(response, status) {
@@ -52,6 +60,7 @@ function onAppointmentSaveComplete(response, status) {
 		$("#alertError").text("Unknown error while saving..");
 		$("#alertError").show();
 	}
+	
 	$("#hidAppointmentIDSave").val("");
 	$("#formAppointment")[0].reset();
 }
@@ -66,6 +75,8 @@ $(document).on("click", ".btnRemove", function(event) {
 			onAppointmentDeleteComplete(response.responseText, status);
 		}
 	});
+	$("#alertSuccess").text("Successfully deleted.");
+	$("#alertSuccess").show();
 });
 
 //DELETE==========================================
@@ -86,6 +97,7 @@ function onAppointmentDeleteComplete(response, status) {
 	} else {
 		$("#alertError").text("Unknown error while deleting..");
 		$("#alertError").show();
+		
 	}
 }
 
@@ -100,7 +112,11 @@ $(document).on(
 			$("#appointmentTime").val($(this).closest("tr").find('td:eq(1)').text());
 			$("#appointmentDoctor").val($(this).closest("tr").find('td:eq(2)').text());
 			$("#appointmentHospital").val($(this).closest("tr").find('td:eq(3)').text());
-		});
+		}
+		
+			
+);
+
 
 // CLIENTMODEL=========================================================================
 function validateAppointmentForm() {

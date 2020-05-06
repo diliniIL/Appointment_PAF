@@ -4,7 +4,7 @@ import java.sql.Statement;
 
 import javax.servlet.http.HttpServlet;
 
-import java.sql.*;
+//import java.sql.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

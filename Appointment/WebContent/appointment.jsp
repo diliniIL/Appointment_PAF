@@ -26,13 +26,13 @@
 				<h1>Appointment Management </h1>
 
 				<form id="formAppointment" name="formAppointment" method="post" action="appointment.jsp">
-					Appointment date : <input id="appointmentDate" name="appointmentDate" type="text"
+					Appointment Date : <input id="appointmentDate" name="appointmentDate" type="text"
 						class="form-control form-control-sm"> <br> 
-					Appointment time : <input id="appointmentTime" name="appointmentTime" type="text"
+					Appointment Time : <input id="appointmentTime" name="appointmentTime" type="text"
 						class="form-control form-control-sm"> <br> 
-					Appointment doctor : <input id="appointmentDoctor" name="appointmentDoctor" type="text"
+					Appointment Doctor : <input id="appointmentDoctor" name="appointmentDoctor" type="text"
 						class="form-control form-control-sm"> <br> 
-					Appointment hospital : <input id="appointmentHospital" name="appointmentHospital" type="text"
+					Appointment Hospital : <input id="appointmentHospital" name="appointmentHospital" type="text"
 						class="form-control form-control-sm"> <br>
 					
 					 <input id="btnSave" name="btnSave" type="button" value="Save"
